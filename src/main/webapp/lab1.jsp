@@ -25,6 +25,8 @@
 
 <p>Change number to: <%= storage.getNumber() %></p>
 
+<p>To string from the class: <%= storage.toString() %></p>
+
 
 <p>my change</p>
 <a href="index.jsp">Home</a>

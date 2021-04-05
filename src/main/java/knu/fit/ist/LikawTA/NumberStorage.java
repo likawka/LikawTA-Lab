@@ -14,4 +14,8 @@ public class NumberStorage {
     public void setNumber(Integer number) {
         this.myNumber = number;
     }
+
+    public String toString() {
+        return String.format("NumberStorage { myNumber = %d }", this.myNumber);
+    }
 }
