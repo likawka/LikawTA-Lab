@@ -6,11 +6,25 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page import="knu.fit.ist.LikawTA.NumberStorage"%>
 <html>
 <head>
     <title>Lab 1 other file</title>
 </head>
 <body>
+
+<%
+    NumberStorage storage = new NumberStorage(10);
+%>
+
+<p>Create storage with number: <%= storage.getNumber() %></p>
+
+<%
+    storage.setNumber(15);
+%>
+
+<p>Change number to: <%= storage.getNumber() %></p>
+
 
 <p>my change</p>
 <a href="index.jsp">Home</a>
