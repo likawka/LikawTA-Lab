@@ -12,9 +12,10 @@
 </head>
 <body>
 
-<p>This is lab 1</p>
-<p>hello</p>
-<a href="lab1.jsp">link to other file</a>
+<h1>This is laboratory 1</h1>
+<p>On this page you can see the transition to laboratory 1</p>
+
+<a href="lab1.jsp"><i> Link to lab 1</i></a>
 
 </body>
 </html>

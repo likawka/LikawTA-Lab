@@ -9,9 +9,11 @@
 <%@page import="knu.fit.ist.LikawTA.NumberStorage"%>
 <html>
 <head>
-    <title>Lab 1 other file</title>
+    <title>lab 1</title>
 </head>
 <body>
+
+<h1> This is my first lab</h1>
 
 <%
     NumberStorage storage = new NumberStorage(10);
@@ -27,8 +29,6 @@
 
 <p>To string from the class: <%= storage.toString() %></p>
 
-
-<p>my change</p>
 <a href="index.jsp">Home</a>
 </body>
 </html>
