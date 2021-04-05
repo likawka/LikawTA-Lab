@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<p>another page</p>
+<p>my change</p>
 <a href="index.jsp">Home</a>
 </body>
 </html>
