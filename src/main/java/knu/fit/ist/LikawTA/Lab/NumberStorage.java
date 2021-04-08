@@ -1,4 +1,4 @@
-package knu.fit.ist.LikawTA;
+package knu.fit.ist.LikawTA.Lab;
 
 public class NumberStorage {
     private Integer myNumber = 0;

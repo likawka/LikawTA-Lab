@@ -8,14 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Lab1</title>
+    <title>Lab</title>
 </head>
 <body>
 
-<h1>This is laboratory 1</h1>
-<p>On this page you can see the transition to laboratory 1</p>
+<h1>Laboratory works on the theory of algorithms</h1>
+<h4>Created by Zinko Iryna</h4>
 
-<a href="lab1.jsp"><i> Link to lab 1</i></a>
+
+
+<form action="Lab%20work/lab1.jsp">
+    <input type="submit" value="Laboratory work 1">
+</form>
+
+<form action="Lab%20work/lab2.jsp">
+    <input type="submit" value="Laboratory work 2">
+</form>
+
 
 </body>
 </html>
