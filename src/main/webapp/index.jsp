@@ -10,7 +10,7 @@
 <head>
     <title>Lab</title>
 </head>
-<body>
+<body bgcolor="#ffdab9">
 
 <h1>Laboratory works on the theory of algorithms</h1>
 <h4>Created by Zinko Iryna</h4>
