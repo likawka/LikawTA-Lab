@@ -16,6 +16,7 @@
 <body>
 
 <h1> This is first lab</h1>
+<p>----------------------------------------------------</p>
 
 <%
     NumberStorage storage = new NumberStorage(10);
