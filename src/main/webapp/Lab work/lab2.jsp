@@ -12,7 +12,7 @@
     <title>lab 2</title>
 </head>
 <body bgcolor="#ffdab9">
-<h1> This is second lab</h1>
+
 
 
 
