@@ -13,7 +13,6 @@
 </head>
 <body bgcolor="#ffdab9">
 
-<h1> This is first lab</h1>
 
 
 
