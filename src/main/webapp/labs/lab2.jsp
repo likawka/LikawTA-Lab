@@ -17,6 +17,10 @@
 
 <p> <%=request.getAttribute("result")%> </p>
 
+<form action="lab2form.jsp">
+    <input type= "submit" value="Return to input X">
+</form>
+
 <a href="../index.jsp">Home</a>
 
 </body>
