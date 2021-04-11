@@ -17,11 +17,11 @@
 
 
 
-<form action="Lab%20work/lab1.jsp">
+<form action="labs/lab1.jsp">
     <input type="submit" value="Laboratory work 1">
 </form>
 
-<form action="Lab%20work/lab2.jsp">
+<form action="labs/lab2form.jsp">
     <input type="submit" value="Laboratory work 2">
 </form>
 
