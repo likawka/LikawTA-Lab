@@ -15,7 +15,7 @@
 
 <h1> This is first lab</h1>
 
-
+<p> <%=request.getAttribute("result")%> </p>
 
 <a href="../index.jsp">Home</a>
 
