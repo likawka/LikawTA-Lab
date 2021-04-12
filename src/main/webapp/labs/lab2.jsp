@@ -13,8 +13,8 @@
 </head>
 <body bgcolor="#ffdab9">
 
-<h1> This is first lab</h1>
-
+<h1> This is second lab</h1>
+<h3> Results: </h3>
 <p> <%=request.getAttribute("result")%> </p>
 
 <form action="lab2form.jsp">
