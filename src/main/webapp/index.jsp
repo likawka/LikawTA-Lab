@@ -25,6 +25,10 @@
     <input type="submit" value="Laboratory work 2">
 </form>
 
+<form action="labs/lab3form.jsp">
+    <input type="submit" value="Laboratory work 3">
+</form>
+
 
 </body>
 </html>
