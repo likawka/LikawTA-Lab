@@ -10,7 +10,7 @@
 <head>
     <title>lab3form</title>
 </head>
-<body>
+<body bgcolor="#ffdab9">
 
 <h3> Enter array length and Insert array elements: </h3>
 
