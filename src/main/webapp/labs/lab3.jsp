@@ -12,7 +12,7 @@
 </head>
 <body bgcolor="#ffdab9">
 <h1> This is third lab </h1>
-
+<h3>Determine the number of those that are the square of a natural number. </h3>
 <h3> Results: </h3>
 <p> <%=request.getAttribute("result")%> </p>
 
