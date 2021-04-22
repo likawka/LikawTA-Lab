@@ -4,24 +4,36 @@ import java.util.*;
 
 public class TextProcessing {
     String text;
+    private Comparator<HashMap.Entry<String, Integer>> comparator = new Comparator<HashMap.Entry<String, Integer>>() {
+        @Override
+        public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+            Integer first = o1.getValue();
+            Integer second = o2.getValue();
+            return first.compareTo(second);
+        }
+    };
 
     public TextProcessing(String text) {
         this.text = text;
     }
 
-    public void cleanText() {
-        cleanString(text);
+    public String getText() {
+        return this.text;
+    }
+
+    public String getCleanText() {
+       return cleanString(text);
     }
 
     private String[] splitIntoWords() {
-        return this.text.split(" ");
+        return cleanString(this.text).split(" ");
     }
 
     public int getUniqueWordsCount() {
         String[] words = this.splitIntoWords();
         HashSet<String> uniqueWords = new HashSet<>();
-        for (int i = 0; i < words.length; i++) {
-            uniqueWords.add(words[i]);
+        for (String word: words) {
+            uniqueWords.add(word);
         }
         return uniqueWords.size();
     }
@@ -34,61 +46,94 @@ public class TextProcessing {
     public ArrayList<String> getMostFrequentWords() {
         String[] words = this.splitIntoWords();
         HashMap<String, Integer> wordCounter = new HashMap<>();
-        for (int i = 0; i < words.length; i++) {
-            wordCounter.put(words[i], wordCounter.getOrDefault(words[i], 0) + 1);
+        for (String word : words) {
+            wordCounter.put(word, wordCounter.getOrDefault(word, 0) + 1);
         }
 
-        Comparator<HashMap.Entry<String, Integer>> comparator = new Comparator<HashMap.Entry<String, Integer>>() {
-            @Override
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-                Integer first = o1.getValue();
-                Integer second = o2.getValue();
-                return first.compareTo(second);
-            }
-        };
+        return getFirstN(wordCounter, 5);
+    }
 
-        PriorityQueue<HashMap.Entry<String, Integer>> highest = new PriorityQueue<HashMap.Entry<String, Integer>>(5, comparator);
-        for (HashMap.Entry<String, Integer> entry : wordCounter.entrySet()) {
+    public int getTwoDifferentLetterWords() {
+        String[] words = this.splitIntoWords();
+        int res = 0;
+
+        for (String word : words) {
+            HashSet<Character> letters = new HashSet<>();
+            for (Character c : word.toCharArray()) {
+                letters.add(c);
+            }
+            if (letters.size() == 2) {
+                res++;
+            }
+        }
+        return res;
+    }
+
+    public ArrayList<String> getThreeLetterSeqs() {
+        String[] words = this.splitIntoWords();
+        int n = 3;
+        HashMap<String, Integer> seqs = new HashMap<>();
+        for (String word: words) {
+            if (word.length() < n) {
+                continue;
+            }
+            String currentSeq = "";
+            for (int i=0; i<n; i++) {
+                currentSeq += word.charAt(i);
+            }
+            seqs.put(currentSeq, seqs.getOrDefault(currentSeq, 0) + 1);
+            for (int i=n; i<word.length();i++) {
+                currentSeq = currentSeq.substring(1);
+                currentSeq += word.charAt(i);
+                seqs.put(currentSeq, seqs.getOrDefault(currentSeq, 0) + 1);
+            }
+        }
+
+        return getFirstN(seqs, 3);
+    }
+
+    private ArrayList<String> getFirstN(HashMap<String, Integer> map, int size) {
+        PriorityQueue<HashMap.Entry<String, Integer>> highest = new PriorityQueue<HashMap.Entry<String, Integer>>(size, this.comparator);
+        for (HashMap.Entry<String, Integer> entry : map.entrySet()) {
             highest.add(entry);
-            while (highest.size() > 5) {
+            while (highest.size() > size) {
                 highest.poll();
             }
         }
+        return getResultList(highest);
+    }
+
+    private ArrayList<String> getResultList(PriorityQueue<Map.Entry<String, Integer>> highest) {
         ArrayList<String> result = new ArrayList<>();
         while (highest.size() > 0) {
             result.add(highest.poll().getKey());
         }
-        int n = result.size();
-        for (int i = 0; i < n / 2; i++) {
+        int list_size = result.size();
+        for (int i = 0; i < list_size / 2; i++) {
             String temp = result.get(i);
-            result.set(i, result.get(n - i - 1));
-            result.set(n - i - 1, temp);
+            result.set(i, result.get(list_size - i - 1));
+            result.set(list_size - i - 1, temp);
         }
-        System.out.println(result);
 
         return result;
     }
 
-    public int wordsWithoutH() {
+    public int getWordsWithoutH() {
         String[] words = this.splitIntoWords();
-        int ress = 0;
-        for (int i = 0; i < words.length; i++) {
-            char[] Word = words[i].toCharArray();
-            if (Word.length > 1) {
-                boolean CharExist = false;
-                for (int j = 0; j < Word.length; j++) {
-                    if (Word[j] == 'h' || Word[j] == 'H') {
-                        CharExist = true;
-                        break;
-                    }
-                }
-                if (!CharExist){
-                    ress++;
+        int res = 0;
+        for (String word : words) {
+            boolean charExist = false;
+            for (Character c : word.toCharArray()) {
+                if (c == 'h') {
+                    charExist = true;
+                    break;
                 }
             }
+            if (!charExist){
+                res++;
+            }
         }
-
-        return ress;
+        return res;
     }
 
 
