@@ -15,25 +15,25 @@
 </head>
 <body bgcolor="#FFFFF0">
 
-<h1> This is first lab</h1>
-<p>----------------------------------------------------</p>
+<h1 align="center"> This is first lab</h1>
+<hr noshade size="2" width="60%">
 
 
 <%
     NumberStorage storage = new NumberStorage(10);
 %>
 
-<p>Create storage with number: <%= storage.getNumber() %></p>
+<p align="center" >Create storage with number: <%= storage.getNumber() %></p>
 
 <%
     storage.setNumber(8);
 %>
 
-<p>Change number to: <%= storage.getNumber() %></p>
+<p align="center">Change number to: <%= storage.getNumber() %></p>
 
-<p>To string from the class: <%= storage.toString() %></p>
+<p align="center">To string from the class: <%= storage.toString() %></p>
 
-<p>----------------------------------------------------</p>
+<hr noshade size="2" width="60%">
 <%
     int x = storage.getNumber();
 
@@ -41,8 +41,13 @@
     x%=3;
 %>
 
-<p> 8 mod 3 = <%=x%>  </p>
-<a href="../index.jsp">Home</a>
+<p align="center"> 8 mod 3 = <%=x%>  </p>
+
+<hr noshade size="2" width="100%">
+
+<form action="../index.jsp" align="center">
+    <input type="submit" value="Home">
+</form>
 
 
 </body>

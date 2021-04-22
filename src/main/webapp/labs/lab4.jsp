@@ -13,12 +13,17 @@
 <body bgcolor="#FFFFF0">
 
 <%
-    TextProcessing processor = new TextProcessing("a a a a a a b b b b b c c c c d d d e e k l m n");
+    TextProcessing processor = new TextProcessing("thing thanks home Mum Laba ha ha h h makaron apple  ");
 %>
 
 <p>Unique words: <%= processor.getUniqueWordsCount() %></p>
 <p>Most Frequent words: <%= processor.getMostFrequentWords() %></p>
+<p>Words without "h": <%= processor.wordsWithoutH() %> </p>
 
+
+<form action="../index.jsp" align="center">
+    <input type="submit" value="Home">
+</form>
 
 </body>
 </html>

@@ -13,10 +13,10 @@
 </head>
 <body bgcolor="#FFFFF0">
 
-<h1> Insert X</h1>
+<h1 align="center" > Insert X</h1>
 
 <div>
-  <form action="./lab2" method="post">
+  <form action="./lab2" method="post" align="center">
       <input type="text" name="x" placeholder="Enter X as ##.###">
       <input type="submit" value="ok">
   </form>

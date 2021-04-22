@@ -13,15 +13,21 @@
 </head>
 <body bgcolor="#FFFFF0">
 
-<h1> This is second lab</h1>
-<h3> Results: </h3>
-<p> <%=request.getAttribute("result")%> </p>
+<h1 align="center" > This is second lab</h1>
+<hr noshade size="2" width="60%">
 
-<form action="lab2form.jsp">
+<h3 align="center"> Results: </h3>
+<p align="center"> <%=request.getAttribute("result")%> </p>
+
+<hr noshade size="2" width="60%">
+<form action="lab2form.jsp" align="center">
     <input type= "submit" value="Return to input X">
 </form>
 
-<a href="../index.jsp">Home</a>
+<hr noshade size="2" width="100%" align="center">
+<form action="../index.jsp" align="center">
+    <input type="submit" value="Home">
+</form>
 
 </body>
 </html>

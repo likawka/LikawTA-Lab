@@ -12,10 +12,10 @@
 </head>
 <body bgcolor="#FFFFF0">
 
-<h3> Enter array length and Insert array elements: </h3>
+<h3 align="center" > Enter array length and Insert array elements: </h3>
 
 <div>
-    <form action="./lab3" method="post">
+    <form action="./lab3" method="post" align="center">
 
         <input type="text" name="size" placeholder="array length">
         <input type="text" name="x" placeholder="array elements">
