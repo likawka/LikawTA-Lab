@@ -18,15 +18,34 @@
             "Another tech analyst, Gartner, predicts that the enterprise and automotive sectors will account for 5.8 billion devices this year, up almost a quarter on 2019. Utilities will be the highest user of IoT, thanks to the continuing rollout of smart meters. Security devices, in the form of intruder detection and web cameras will be the second biggest use of IoT devices. Building automation – like connected lighting – will be the fastest growing sector, followed by automotive (connected cars) and healthcare (monitoring of chronic conditions). The benefits of the IoT for business depend on the particular implementation; agility and efficiency are usually top considerations.");
 %>
 
-<p>Original text: <%= processor.getText() %> </p>
-<p>Clean text: <%= processor.getCleanText() %>  </p>
-<p>Total Words: <%= processor.getTotalWordCount() %></p>
-<p>Unique words: <%= processor.getUniqueWordsCount() %></p>
-<p>Most Frequent words: <%= processor.getMostFrequentWords() %></p>
-<p>Words without "h": <%= processor.getWordsWithoutH() %> </p>
-<p>Words with exactly 2 unique letters: <%= processor.getTwoDifferentLetterWords() %></p>
-<p>Most common 3-letter sequences: <%= processor.getThreeLetterSeqs() %></p>
+<h1 align="center"> Text editor </h1>
+<hr noshade size="3" width="100%">
 
+<h3 align="center">Original text: </h3>
+<p align="center"> <%= processor.getText() %></p>
+<hr noshade size="2" width="100%">
+
+<h3 align="center">Clean text: </h3>
+<p align="center"><%= processor.getCleanText() %></p>
+<hr noshade size="2" width="100%">
+
+<p align="center">Total Words: <%= processor.getTotalWordCount() %></p>
+<hr noshade size="2" width="60%">
+
+<p align="center">Unique words: <%= processor.getUniqueWordsCount() %></p>
+<hr noshade size="2" width="60%">
+
+<p align="center">Most Frequent words: <%= processor.getMostFrequentWords() %></p>
+<hr noshade size="2" width="60%">
+
+<p align="center">Words without "h": <%= processor.getWordsWithoutH() %> </p>
+<hr noshade size="2" width="60%">
+
+<p align="center">Words with exactly 2 unique letters: <%= processor.getTwoDifferentLetterWords() %></p>
+<hr noshade size="2" width="60%">
+
+<p align="center">Most common 3-letter sequences: <%= processor.getThreeLetterSeqs() %></p>
+<hr noshade size="2" width="100%">
 
 <form action="../index.jsp" align="center">
     <input type="submit" value="Home">
