@@ -11,7 +11,7 @@
 <head>
     <title> Form for lab2 </title>
 </head>
-<body bgcolor="#ffdab9">
+<body bgcolor="#FFFFF0">
 
 <h1> Insert X</h1>
 

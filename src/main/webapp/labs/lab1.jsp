@@ -13,7 +13,7 @@
 <head>
     <title>lab 1</title>
 </head>
-<body bgcolor="#ffdab9">
+<body bgcolor="#FFFFF0">
 
 <h1> This is first lab</h1>
 <p>----------------------------------------------------</p>

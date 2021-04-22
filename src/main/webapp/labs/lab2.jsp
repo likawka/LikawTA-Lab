@@ -11,7 +11,7 @@
 <head>
     <title>lab 2</title>
 </head>
-<body bgcolor="#ffdab9">
+<body bgcolor="#FFFFF0">
 
 <h1> This is second lab</h1>
 <h3> Results: </h3>

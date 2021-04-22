@@ -10,23 +10,27 @@
 <head>
     <title>Lab</title>
 </head>
-<body bgcolor="#ffdab9">
+<body bgcolor="#FFFFF0">
 
-<h1>Laboratory works on the theory of algorithms</h1>
-<h4>Created by Zinko Iryna</h4>
+<h1 align="center" face= comic sans ms >Laboratory works on the theory of algorithms</h1>
+<h4 align="center" face= comic sans ms><i> Created by Zinko Iryna, IP-12 </i></h4>
 
 
 
-<form action="labs/lab1.jsp">
+<form action="labs/lab1.jsp" align="center">
     <input type="submit" value="Laboratory work 1">
 </form>
 
-<form action="labs/lab2form.jsp">
+<form action="labs/lab2form.jsp" align="center">
     <input type="submit" value="Laboratory work 2">
 </form>
 
-<form action="labs/lab3form.jsp">
+<form action="labs/lab3form.jsp" align="center">
     <input type="submit" value="Laboratory work 3">
+</form>
+
+<form action="labs/lab4.jsp" align="center">
+    <input type="submit" value="Laboratory work 4">
 </form>
 
 
