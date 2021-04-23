@@ -16,7 +16,7 @@
 <h1 align="center" > Insert X</h1>
 
 <div>
-  <form action="./lab2" method="post" align="center">
+  <form action="/lab2" method="post" align="center">
       <input type="text" name="x" placeholder="Enter X as ##.###">
       <input type="submit" value="ok">
   </form>

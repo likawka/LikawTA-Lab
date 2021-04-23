@@ -3,7 +3,7 @@ package knu.fit.ist.LikawTA.Lab3;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import knu.fit.ist.LikawTA.Lab2.Lab2View;
+
 
 import java.io.IOException;
 
