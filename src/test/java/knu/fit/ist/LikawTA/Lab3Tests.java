@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Lab3Tests {
 
+
     @Test
     void ArrayTest() {
         ArraySqrt calc = new ArraySqrt();
