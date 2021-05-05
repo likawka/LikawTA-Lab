@@ -12,6 +12,10 @@
 </head>
 <body bgcolor="#FFFFF0">
 
+<p align="center"> <%= request. %></p>
+
+<hr noshade size="2" width="100%">
+
 
 
 
