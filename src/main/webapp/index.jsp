@@ -41,5 +41,15 @@
 
 <hr noshade size="2" width="60%">
 
+<form action="labs/lab5.jsp" align="center">
+    <input type="submit" value="Laboratory work 5">
+</form>
+
+<hr noshade size="2" width="60%">
+
+<form action="labs/lab67form.jsp" align="center">
+    <input type="submit" value="Laboratory work 6-7">
+</form>
+
 </body>
 </html>

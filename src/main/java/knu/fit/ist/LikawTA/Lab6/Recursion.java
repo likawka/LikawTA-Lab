@@ -1,44 +1,63 @@
 package knu.fit.ist.LikawTA.Lab6;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Recursion {
-    public int sum(int n) {
+    private List<Integer> arr;
 
-        if (n >= 1) {
-            return n + sum(n - 1);
+    public Recursion(int n) {
+        Random rd = new Random(); // creating Random object
+        arr = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            arr.add(rd.nextInt() % 100); // storing random integers in an array
         }
-        return n;
     }
 
-//    public int tailSum(int result, int n) {
-//
-//        if (n <= 1) {
-//            return result + n;
-//        }
-//        return tailSum(result + n, n - 1);
-//    }
-
-    public int iterationSum(int n) {
-        int result = 0;
-
-        while (n > 0) {
-            result += n;
-            n--;
-        }
-
-        return result;
+    public String getArrayString() {
+        return arr.toString();
     }
 
-    public int fibonacci(int n) {
-        if (n <= 1) {
-            return n;
+    private int lessThanXImpl(int x, int index) {
+        if (index == arr.size()) {
+            return 0;
         }
-        return fibonacci(n - 1) + fibonacci(n - 2);
+
+        if (arr.get(index) < x) {
+            return 1 + lessThanXImpl(x, index + 1);
+        } else {
+            return lessThanXImpl(x, index + 1);
+        }
     }
 
-    public String toBinary(int n) {
-        if (n <= 1) {
-            return String.valueOf(n);
+    public int lessThanX(int x) {
+        return lessThanXImpl(x, 0);
+    }
+
+    private int lessThanXTailImpl(int x, int index, int res) {
+        if (index == arr.size()) {
+            return res;
         }
-        return toBinary(n / 2) + String.valueOf(n % 2);
+
+        if (arr.get(index) < x) {
+            res++;
+        }
+
+        return lessThanXTailImpl(x, index + 1, res);
+    }
+
+    public int lessThanXTail(int x) {
+        return lessThanXTailImpl(x, 0, 0);
+    }
+
+    public int iterativeLessThanX(int x) {
+        int res = 0;
+        for(int i = 0; i < arr.size(); i++){
+            if(arr.get(i) < x){
+                res++;
+            }
+        }
+        return res;
     }
 }
