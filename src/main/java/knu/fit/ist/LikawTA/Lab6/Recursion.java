@@ -8,10 +8,10 @@ public class Recursion {
     private List<Integer> arr;
 
     public Recursion(int n) {
-        Random rd = new Random(); // creating Random object
+        Random rd = new Random();
         arr = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            arr.add(rd.nextInt() % 100); // storing random integers in an array
+            arr.add(rd.nextInt() % 100);
         }
     }
 
