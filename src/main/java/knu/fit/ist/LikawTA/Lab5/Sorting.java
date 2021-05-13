@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Sorting {
-    private Random rnd = new Random(1);
+
+    private static final int capacity = 28571;
+    private Random rnd = new Random(28571);
     private List<Integer> unsortedList;
 
     public List<Integer> getUnsortedList() {
@@ -19,68 +21,6 @@ public class Sorting {
             unsortedList.add(rnd.nextInt(arrayLength));
         }
 
-    }
-
-    public List<Integer> sortApproach1() {
-
-        int s, t;
-
-        List<Integer> result = new ArrayList<>();
-        result.addAll(unsortedList);
-
-        int n = result.size() - 1;
-        int k = -1;
-
-
-        while (k != n) {
-            s = k + 1;
-            t = s;
-
-
-            while (t != n) {
-                t++;
-                if (result.get(t) < result.get(s)) {
-                    s = t;
-                }
-            }
-
-
-            t = result.get(k + 1);
-            result.set(k + 1, result.get(s));
-            result.set(s, t);
-
-            k++;
-        }
-
-        return result;
-    }
-
-
-    public List<Integer> sortApproach2() {
-
-        int s, t;
-
-        List<Integer> result = new ArrayList<>();
-        result.addAll(unsortedList);
-
-        int n = result.size() - 1;
-        int k = 0;
-
-        while (k != n) {
-            t = k + 1;
-
-            while (t > 0 && result.get(t) < result.get(t - 1)) {
-                s = result.get(t);
-                result.set(t, result.get(t - 1));
-                result.set(t - 1, s);
-                t--;
-            }
-
-            k++;
-
-        }
-
-        return result;
     }
 
     public List<Integer> mergeLists(List<Integer> inputList1, List<Integer> inputList2) {
@@ -113,7 +53,6 @@ public class Sorting {
         return result;
     }
 
-
     public List<Integer> sortApproach3() {
 
         int p, q, r, t;
@@ -140,12 +79,8 @@ public class Sorting {
                 }
                 t = r;
 
-
                 tempList.addAll(mergeLists(result.subList(p, q), result.subList(q, r)));
-
-
             }
-
             result = tempList;
 
             k *= 2;
@@ -154,17 +89,5 @@ public class Sorting {
         return result;
     }
 
-    public List<Integer> sortApproach4() {
 
-        List<Integer> result = unsortedList;
-
-        return result;
-    }
-
-    public List<Integer> sortApproach5() {
-
-        List<Integer> result = unsortedList;
-
-        return result;
-    }
 }

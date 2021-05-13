@@ -4,32 +4,10 @@ import java.util.List;
 
 
 public class Searching {
-    public int linearSearch(int find, List<Integer> list) {
-        int result = -1;
-
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == find) {
-                return i;
-            }
-        }
-        return result;
-    }
-
     public int linearSearch(int find, int start, List<Integer> list) {
         int result = -1;
 
         for (int i = start; i < list.size(); i++) {
-            if (list.get(i) == find) {
-                return i;
-            }
-        }
-        return result;
-    }
-
-    public int linearSearch(int find, int start, int finish, List<Integer> list) {
-        int result = -1;
-
-        for (int i = start; i < finish; i++) {
             if (list.get(i) == find) {
                 return i;
             }

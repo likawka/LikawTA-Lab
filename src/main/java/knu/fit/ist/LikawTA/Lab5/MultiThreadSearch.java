@@ -3,7 +3,7 @@ package knu.fit.ist.LikawTA.Lab5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiThreadSearch {
+public class MultiThreadSearch implements Runnable {
     private List<Integer> searchResults = new ArrayList<>();
 
     private List<Integer> inputList;
@@ -14,8 +14,9 @@ public class MultiThreadSearch {
 
     private boolean finished = false;
 
+    @Override
     public void run() {
-        searchResults.add(searching.linearSearch(find, inputList));
+        searchResults.add(searching.binarySearch(find, inputList));
         finished = true;
     }
 
@@ -31,7 +32,6 @@ public class MultiThreadSearch {
         this.find = find;
         this.inputList = inputList;
     }
-
 
 
     public List<Integer> getSearchResults() {
