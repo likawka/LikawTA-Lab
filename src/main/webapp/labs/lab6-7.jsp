@@ -29,7 +29,6 @@
 <hr noshade size="2" width="100%">
 
 <h3 align="center"> Laboratory work 7: Tree</h3>
-<p align="center"> under development, sorry:(</p>
 
 <%
     List<Integer> arr = Arrays.asList(11, 6, 1, 7, 10, 9, 8, 4);
@@ -37,9 +36,9 @@
 
     Tree tree = new Tree(arr);
 %>
-
-<p><%= tree.getPostOrder() %></p>
-<p><%= tree.getPostOrderIterative() %></p>
+<h2 align="center"> Tree Array: (11, 6, 1, 7, 10, 9, 8, 4) </h2>
+<p align="center"> Recursion Tree: <%= tree.getPostOrder() %></p>
+<p align="center"> Iterative Tree: <%= tree.getPostOrderIterative() %></p>
 
 
 
