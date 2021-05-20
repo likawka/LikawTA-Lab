@@ -15,6 +15,10 @@ public class Recursion {
         }
     }
 
+    public void setArray(List<Integer> arr_) {
+        this.arr = arr_;
+    }
+
     public String getArrayString() {
         return arr.toString();
     }
