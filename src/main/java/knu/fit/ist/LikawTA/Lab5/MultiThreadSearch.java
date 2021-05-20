@@ -10,13 +10,13 @@ public class MultiThreadSearch implements Runnable {
 
     int find;
 
-    private final Searching searching = new Searching();
+    private final LinearSearch searching = new LinearSearch();
 
     private boolean finished = false;
 
     @Override
     public void run() {
-        searchResults.add(searching.binarySearch(find, inputList));
+        searchResults.add(searching.linearSearch(find, inputList));
         finished = true;
     }
 
@@ -28,10 +28,14 @@ public class MultiThreadSearch implements Runnable {
         this.find = find;
     }
 
+    public MultiThreadSearch() {
+    }
+
     public MultiThreadSearch(int find, List<Integer> inputList) {
         this.find = find;
         this.inputList = inputList;
     }
+
 
 
     public List<Integer> getSearchResults() {
@@ -42,15 +46,8 @@ public class MultiThreadSearch implements Runnable {
         return inputList;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("MultiThreadSearch{searchResults=").append(searchResults);
-        sb.append('}');
-        return sb.toString();
-    }
-
     public boolean isFinished() {
         return finished;
     }
+
 }
