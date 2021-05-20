@@ -1,7 +1,6 @@
 package knu.fit.ist.LikawTA.Lab7;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Tree {
     Node root;
@@ -21,6 +20,29 @@ public class Tree {
         }
 
         return current;
+    }
+
+    public Tree(List<Integer> arr) {
+        int start = 0;
+        int end = arr.size() - 1;
+        this.root = fromSortedListRecursive(arr, start, end);
+    }
+
+    private Node fromSortedListRecursive(List<Integer> arr, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+
+        if (start == end) {
+            return new Node(arr.get(start));
+        }
+
+        int mid = (start + end) / 2;
+
+        Node res = new Node(arr.get(mid));
+        res.left = fromSortedListRecursive(arr, start, mid - 1);
+        res.right = fromSortedListRecursive(arr, mid + 1, end);
+        return res;
     }
 
     public void add(int value) {
@@ -84,51 +106,47 @@ public class Tree {
         root = deleteRecursive(root, value);
     }
 
-    public void traverseInOrder(Node node) {
+    public String getPostOrder() {
+        StringBuilder str = new StringBuilder();
+        this.traversePostOrder(this.root, str);
+        return str.toString();
+    }
+
+    public void traversePostOrder(Node node, StringBuilder str) {
         if (node != null) {
-            traverseInOrder(node.left);
-            System.out.print(" " + node.value);
-            traverseInOrder(node.right);
+            traversePostOrder(node.left, str);
+            traversePostOrder(node.right, str);
+            str.append(" " + node.value);
         }
     }
 
-    public void traversePreOrder(Node node) {
-        if (node != null) {
-            System.out.print(" " + node.value);
-            traversePreOrder(node.left);
-            traversePreOrder(node.right);
-        }
-
+    public String getPostOrderIterative() {
+        StringBuilder str = new StringBuilder();
+        this.traversePostOrderIterative(str);
+        return str.toString();
     }
 
-    public void traversePostOrder(Node node) {
-        if (node != null) {
-            traversePostOrder(node.left);
-            traversePostOrder(node.right);
-            System.out.print(" " + node.value);
-        }
-    }
-
-    public void traverseLevelOrder(Node root) {
-        if (root == null) {
-            return;
-        }
-
-        Queue<Node> nodes = new LinkedList<>();
-        nodes.add(root);
-
-        while (!nodes.isEmpty()) {
-
-            Node node = nodes.remove();
-
-            System.out.print(" " + node.value);
-
-            if (node.left != null) {
-                nodes.add(node.left);
+    public void traversePostOrderIterative(StringBuilder str) {
+        List<Node> stack = new ArrayList<Node>();
+        stack.add(this.root);
+        Set<Node> visited = new HashSet<Node>();
+        while (!stack.isEmpty()) {
+            Node node = stack.get(stack.size() - 1);
+            visited.add(node);
+            if ((node.left == null || visited.contains(node.left)) && (node.right == null || visited.contains(node.right))) {
+                str.append(" " + node.value);
+                stack.remove(stack.size() - 1);
+                continue;
             }
 
-            if (node.right != null) {
-                nodes.add(node.right);
+            if (node.left != null && !visited.contains(node.left)) {
+                stack.add(node.left);
+                continue;
+            }
+
+            if (node.right != null && !visited.contains(node.right)) {
+                stack.add(node.right);
+                continue;
             }
         }
     }
