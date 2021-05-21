@@ -13,7 +13,7 @@
 
 <div>
 
-    <form action="./lab5" method="post" align="center">
+    <form action="../lab5" method="post" align="center">
 
         <%=text.cleanText(text.text)%>
 
@@ -41,18 +41,18 @@
 
 
 
-        <h1>Багатопотоковий пошук</h1>
-        <h2>Введіть кількість потоку</h2>
+<%--        <h1>Багатопотоковий пошук</h1>--%>
+<%--        <h2>Введіть кількість потоку</h2>--%>
 
-        <input type="text" name="threads" placeholder="Enter the number of the threads"/>
+<%--        <input type="text" name="threads" placeholder="Enter the number of the threads"/>--%>
 
-        <h2>Введіть шукане ціле число</h2>
+<%--        <h2>Введіть шукане ціле число</h2>--%>
 
-        <input type="text" name="intp" placeholder="Enter the int value"/>
+<%--        <input type="text" name="intp" placeholder="Enter the int value"/>--%>
 
-        <h2></h2>
+<%--        <h2></h2>--%>
 
-        <input type="submit" value="Ok"/>
+       <input type="submit" value="Ok"/>
 
 
     </form>

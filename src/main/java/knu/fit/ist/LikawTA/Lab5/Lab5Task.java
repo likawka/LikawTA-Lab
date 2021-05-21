@@ -4,6 +4,7 @@ import java.util.Random;
 import org.springframework.stereotype.Service;
 import knu.fit.ist.LikawTA.Lab4.Text;
 
+@Service
 
 public class Lab5Task {
     Random rnd = new Random();
@@ -21,14 +22,14 @@ public class Lab5Task {
         return SortObj.listObj().toString();
     }
 
-    public String mts(String nStr, String pStr){
-        if(nStr.equals("") || pStr.equals("")) return "Enter the number of "
-                + "threads and the search integer value >0";
-        int n = Integer.parseInt(nStr);
-        int p = Integer.parseInt(pStr);
-        return MultiThreadStart.show(n,p,ListInt.listOfInt(MultiThreadStart.getMaxSize()));
-
-    }
+//    public String mts(String nStr, String pStr){
+//        if(nStr.equals("") || pStr.equals("")) return "Enter the number of "
+//                + "threads and the search integer value >0";
+//        int n = Integer.parseInt(nStr);
+//        int p = Integer.parseInt(pStr);
+//        return MultiThreadStart.show(n,p,ListInt.listOfInt(MultiThreadStart.getMaxSize()));
+//
+//    }
 
     public String sortStr(){
         return SortObj.sortApproach1().toString();

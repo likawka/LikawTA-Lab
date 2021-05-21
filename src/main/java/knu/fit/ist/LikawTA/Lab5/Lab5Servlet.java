@@ -59,17 +59,17 @@ public class Lab5Servlet extends HttpServlet {
         String sortStr = lab5task.sortStr();
         String sortShr = lab5task.sortShr();
         String searchWord = lab5task.searchWord(request.getParameter("word"), request.getParameter("start"), request.getParameter("finish"));
-        String mts = lab5task.mts(request.getParameter("threads"),request.getParameter("intp"));
+//        String mts = lab5task.mts(request.getParameter("threads"),request.getParameter("intp"));
 
         request.setAttribute("list", list);
         request.setAttribute("sortedList", sortedList);
         request.setAttribute("sortStr", sortStr);
         request.setAttribute("sortShr", sortShr);
         request.setAttribute("searchWord", searchWord);
-        request.setAttribute("mts", mts);
+//        request.setAttribute("mts", mts);
 
 
-        request.getRequestDispatcher("lab5.jsp").forward(request, response);
+        request.getRequestDispatcher("labs/lab5.jsp").forward(request, response);
 
     }
     @Override
