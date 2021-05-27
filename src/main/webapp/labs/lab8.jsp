@@ -17,9 +17,9 @@
 
 <hr noshade size="2" width="100%">
 <h3 align="center" > Your array: <%= request.getParameter("x") %></h3>
-<p align="center" > The first solution: <%= request.getAttribute("res_1") %></p>
-<p align="center" > The second solution: <%= request.getAttribute("res_2") %></p>
-<p align="center" > The third solution: <%= request.getAttribute("res_3") %></p>
+<p align="center" > The first solution ( O(nˆ2) ): <%= request.getAttribute("res_1") %></p>
+<p align="center" > The second solution ( O(1) ): <%= request.getAttribute("res_2") %></p>
+<p align="center" > The third solution ( O(log n) ): <%= request.getAttribute("res_3") %></p>
 
 
 <hr noshade size="2" width="100%">
